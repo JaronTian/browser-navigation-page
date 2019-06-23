@@ -12,7 +12,9 @@
     </header>
 
     <main>
-      <div class="wrapper" id="mainXXXX"></div>
+
+        <!-- <kbd class="key">A</kbd> 先写好key的样式，再让所有kbd的class='key'-->
+        <div class="wrapper" id="main"></div>
     </main>
 
     <footer>
@@ -40,18 +42,20 @@
         //遍历 keys，生成 kbd 标签
         index =0
         while(index< keys['length']){ //0  1  2
-            divXXXX = document.createElement('div')
-            mainXXXX.appendChild(divXXXX)
+            div = document.createElement('div')
+            div.className = 'row'
+            main.appendChild(div)
             row = keys[index]  //第一个数组 第二个数组 第三个数组
             index2 = 0
             while(index2< row['length']){ //0-9 0-8 0-6
-                kbdXXXX = document.createElement('kbd')
-                kbdXXXX.textContent = row[index2]
-                divXXXX.appendChild(kbdXXXX)
-                buttonX = document.createElement('button')
-                buttonX.textContent = '编辑'
-                buttonX.id = row[index2]
-                buttonX.onclick = function(jhbjfgcgcjh){
+                kbd = document.createElement('kbd')
+                kbd.textContent = row[index2]
+                kbd.className = 'key'
+                div.appendChild(kbd)
+                button = document.createElement('button')
+                button.textContent = '编辑'
+                button.id = row[index2]
+                button.onclick = function(jhbjfgcgcjh){
                     //console.log(jhbjfgcgcjh.target)
                     //jhbjfgcgcjh['target']['id'] 就是永华点击的元素
                     key = (jhbjfgcgcjh['target']['id']) //q w e r t
@@ -60,7 +64,7 @@
                     localStorage.setItem('zzz',JSON.stringify(hash))
                     console.log(hash)
                 }
-                kbdXXXX.appendChild(buttonX)
+                kbd.appendChild(button)
                 
                 index2 = index2 + 1
             }
