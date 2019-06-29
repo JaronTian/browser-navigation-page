@@ -23,7 +23,7 @@ kbd:hover >button{
   display: inline-block;
 }
 body{
-  background: grey url(./wall.jpg) no-repeat center center;
+  background: grey url(./image/wall.jpg) no-repeat center center;
   background-size: cover; /*自适应，完全盖住*/
 }
 main{

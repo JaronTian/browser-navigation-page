@@ -47,20 +47,20 @@
                 return span
         }
         function createButton(id){ //创建按钮元素
-            var button = tag('button')
+            var button = tag('button') 
                 button.textContent = '编辑'
                 button.id = id
                 button.onclick = function(jhbjfgcgcjh){
                     //console.log(jhbjfgcgcjh.target)// 被点击的按钮标签
                     //jhbjfgcgcjh['target']['id'] 就是用户点击的元素
-                    var button2 = jhbjfgcgcjh['target'] //鼠标事件的按钮
+                    var button2 = jhbjfgcgcjh['target'] //或者 .target //鼠标事件的按钮
                     var img2 = button2.previousSibling // 返回某节点之前紧跟的节点
                     var key = button2['id'] //q w e r t
                     var x = prompt('给我一个网址') //编辑网址
                     hash[key] = x // hash 中网址变更
                     img2.src = 'http://'+x + '/favicon.ico' //更新图标
                     img2.onerror = function(xxx){ //如果取不到ico
-                        xxx.target.src = './img-null.png'
+                        xxx.target.src = './image/icoEnable.png'
                     }
                     localStorage.setItem('zzz',JSON.stringify(hash)) // 把hash存在本地
                     console.log(hash)
@@ -72,10 +72,10 @@
                 if(domain){
                     img.src = 'http://' + domain + '/favicon.ico'
                 }else{
-                    img.src = './img-null.png'
+                    img.src = './image/icoEnable.png'
                 }
                 img.onerror = function(xxx){
-                    xxx.target.src = './img-null.png' //xxx.target 就是img
+                    xxx.target.src = './image/icoEnable.png' //xxx.target 就是img
                 }
                 return img
         }
